@@ -44,12 +44,18 @@ func main() {
 	for i := 0; i < size; i++ {
 		buf = append(buf, text[i])
 
+		// fmt.Println(string(buf))
+
+		// fmt.Printf(`text[%d : %[1]d+%d = `, i, nlink)
+		// fmt.Println(text[i : i+nlink])
+
 		// slice the input and look for the link pattern
 		// do not slice it when it goes beyond the input text's capacity
 		if len(text[i:]) >= nlink && text[i:i+nlink] == link {
+			fmt.Printf(`text[%d : %[1]d+%d = `, i, nlink)
+			fmt.Println(text[i : i+nlink])
 		}
 	}
 
 	// print out the buffer as text (string)
-	fmt.Println(string(buf))
 }

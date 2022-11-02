@@ -52,7 +52,7 @@ func main() {
 			in = true
 
 			// add the "http://" manually
-			buf = append(buf, link...)
+			// buf = append(buf, link...)
 
 			// jump to the next character after "http://"
 			i += nlink
@@ -70,10 +70,12 @@ func main() {
 
 		// if we're in the link detection mode (inside the link bytes)
 		// then, mask the current character
+		fmt.Println(i)
 		if in {
-			c = mask
+			// c = mask
+			buf[i] = mask
 		}
-		buf = append(buf, c)
+		// buf = append(buf, c)
 	}
 
 	// print out the buffer as text (string)
